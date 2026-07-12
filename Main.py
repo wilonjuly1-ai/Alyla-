@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="Alyla")
+app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"msg": "Alyla no ar 🙏 Estou pronta para ajudar"}
+    return {"mensagem": "Alyla está online e pronta para evangelizar! 🙏"}
 
 @app.get("/chat")
-def chat(msg: str, nome: str = "amigo"):
-    return {"resposta": f"Oi {nome}, eu te ouvi: {msg}. Deus te ama e está contigo."}
+def chat(pergunta: str):
+    return {"resposta": f"Alyla recebeu: {pergunta}. Em breve vou responder com a Palavra!"}
